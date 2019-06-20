@@ -23,7 +23,7 @@ ps -ef |grep 1080
 
 ![image-20190618000205412](assets/xshell_ssh_agent.jpg)
 
-## 0x01 polipo(socks5->http)
+## 0x01. polipo(socks5->http)
 
 主要功能是将socks5代理转换成http代理
 
