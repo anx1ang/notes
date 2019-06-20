@@ -248,6 +248,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#0x01-poliposocks5-http" title="0x01 polipo(socks5-&gt;http)" class="md-nav__link">
+    0x01 polipo(socks5-&gt;http)
+  </a>
+  
+</li>
+      
       
       
       
@@ -256,6 +263,42 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Assets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Assets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../assets/水井坊基线检查/" title="水井坊基线检查" class="md-nav__link">
+      水井坊基线检查
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -287,6 +330,13 @@
         <li class="md-nav__item">
   <a href="#0x00-ssh" title="0x00. ssh隧道代理" class="md-nav__link">
     0x00. ssh隧道代理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0x01-poliposocks5-http" title="0x01 polipo(socks5-&gt;http)" class="md-nav__link">
+    0x01 polipo(socks5-&gt;http)
   </a>
   
 </li>
@@ -327,6 +377,41 @@ ps -ef |grep 1080
 <li>xshell</li>
 </ul>
 <p><img alt="image-20190618000205412" src="../assets/xshell_ssh_agent.jpg" /></p>
+<h2 id="0x01-poliposocks5-http">0x01 polipo(socks5-&gt;http)</h2>
+<p>主要功能是将socks5代理转换成http代理</p>
+<p>安装</p>
+<pre><code class="bash">apt-get install polipo
+</code></pre>
+
+<p>配置</p>
+<pre><code>vim /etc/polipo/config
+</code></pre>
+
+<p><img alt="image-20190620124859384" src="../assets/polipo_config.png" /></p>
+<p>启动服务</p>
+<pre><code class="bash">polipo -c /etc/polipo/config
+</code></pre>
+
+<p>终端代理配置：</p>
+<p>``` bash
+vim ~/.bashrc</p>
+<pre><code>
+将下面添加到文件末尾：
+
+```bash
+alias setproxy=&quot;export http_proxy=http://127.0.0.1:8123;export https_proxy=https://127.0.0.1:8123;echo 'proxy on'&quot;
+
+alias unsetproxy=&quot;unset http_proxy;unset https_proxy;echo 'proxy off'&quot;
+</code></pre>
+
+<p>启用代理:</p>
+<pre><code>setproxy
+</code></pre>
+
+<p><img alt="image-20190620130536501" src="../assets/image-20190620130536501.png" /></p>
+<p>关闭代理:</p>
+<pre><code class="bash">unsetproxy
+</code></pre>
                 
                   
                 
@@ -361,6 +446,20 @@ ps -ef |grep 1080
             </div>
           </a>
         
+        
+          <a href="../assets/水井坊基线检查/" title="水井坊基线检查" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                水井坊基线检查
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
